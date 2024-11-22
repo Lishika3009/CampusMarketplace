@@ -53,6 +53,7 @@ module.exports.getAllUsers = async (req, res, next) => {
   }
 };
 
+/*
 module.exports.setAvatar = async (req, res, next) => {
   try {
     const userId = req.params.id;
@@ -73,6 +74,7 @@ module.exports.setAvatar = async (req, res, next) => {
     next(ex);
   }
 };
+*/
 
 module.exports.logOut = (req, res, next) => {
   try {
