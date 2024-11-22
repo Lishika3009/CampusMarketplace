@@ -151,7 +151,7 @@ app.post('/signup', (req, res) => {
   const user = new Users({ username: username, password: password ,mobile,email,userlocation});
   user.save()
     .then(() => {
-      console.log("User Registered");
+      console.log(user);
       res.send({ message: 'Saved successfully.' });
     })
     

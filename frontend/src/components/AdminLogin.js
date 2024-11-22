@@ -7,7 +7,7 @@ function AdminLogin() {
   const navigate = useNavigate();
 
   const [username, setUserName] = useState('atharv');
-  const [password, setPassword] = useState('');
+  const [password, setPassword] = useState('12345678');
 
   const handleApi = () => {
     console.log({ username, password });
