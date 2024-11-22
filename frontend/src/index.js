@@ -1,46 +1,79 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "../node_modules/font-awesome/css/font-awesome.min.css";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Provider } from "react-redux";
-import store from "./redux/store";
 
+import './index.css';
+import * as React from "react";
+import { createRoot } from "react-dom/client";
 import {
-  Home,
-  Product,
-  Products,
-  AboutPage,
-  ContactPage,
-  Cart,
-  Login,
-  Register,
-  Checkout,
-  PageNotFound,
-} from "./pages";
-import ScrollToTop from "./components/ScrollToTop";
-import { Toaster } from "react-hot-toast";
+  createBrowserRouter,
+  RouterProvider
+} from "react-router-dom";
+import Home from './components/home';
+import Login from './components/login';
+import Signup from './components/Signup';
+import AddProduct from './components/Addproduct';
+import LikedProducts from './components/LikedProducts';
+import ProductDetail from './components/ProductDetail';
+import RegistrationPage from './components/RegistrationPage';
+import MyProducts from './components/MyProducts';
+import MyProfile from './components/MyProfile';
+import Admin from './components/Admin';
+import AdminSignup from './components/AdminSignup';
+import AdminLogin from './components/AdminLogin';
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <BrowserRouter>
-    <ScrollToTop>
-      <Provider store={store}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/product" element={<Products />} />
-          <Route path="/product/:id" element={<Product />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="*" element={<PageNotFound />} />
-          <Route path="/product/*" element={<PageNotFound />} />
-        </Routes>
-      </Provider>
-    </ScrollToTop>
-    <Toaster />
-  </BrowserRouter>
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: ( <Home/> ),
+  },
+  {
+    path: "about",
+    element: <div>About</div>,
+  },
+  {
+    path: "/login",
+    element: (<Login/>),
+  },
+  {
+    path: "/signup",
+    element: (<Signup/>),
+  },
+  {
+    path: "/addproduct",
+    element: (<AddProduct/>),
+  },
+  {
+    path: "/likedproducts",
+    element: (<LikedProducts/>),
+  },
+  {
+    path: "/product/:productId",
+    element: (<ProductDetail/>),
+  },
+  {
+    path: "/registration",
+    element: (<RegistrationPage/>),
+  },
+  {
+    path: "/myproducts",
+    element: (<MyProducts/>),
+  },
+  {
+    path: "/myprofile",
+    element: (<MyProfile/>),
+  },
+  {
+    path: "/admin",
+    element: (<Admin/>),
+  },
+  {
+    path: "/adminsignup",
+    element: (<AdminSignup/>),
+  },
+  {
+    path: "/adminlogin",
+    element: (<AdminLogin/>),
+  },
+]);
+
+createRoot(document.getElementById("root")).render(
+  <RouterProvider router={router} />
 );
