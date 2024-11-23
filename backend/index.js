@@ -386,17 +386,41 @@ app.get('/myprofile/:userId', (req, res) => {
     });
 });
 
-let messages = []
-io.on('connection', (socket)=>{
-  console.log('Socket Connected',socket.id);
+let messages = {};
 
-  socket.on('sendMsg',(data)=>{
-    messages.push(data);
-    io.emit('getMsg',messages)
-  })
+io.on('connection', (socket) => {
+    console.log('Socket Connected', socket.id);
 
-  io.emit('getMsg',messages)
-})
+    // When a user is interested in a product, join a room dedicated to that product
+    socket.on('joinRoom', (productId) => {
+        console.log('User joined room:', productId);
+        socket.join(productId); // Join room based on productId
+        // Send previous messages if any exist for this product
+        if (messages[productId]) {
+            socket.emit('getMsg', messages[productId]);
+        }
+    });
+
+    // When a user sends a message, store it and emit to others in the same room
+    socket.on('sendMsg', (data) => {
+        const { productId, message, userId } = data;
+        console.log('Received message:', message);
+
+        // Save message per product
+        if (!messages[productId]) {
+            messages[productId] = [];
+        }
+        messages[productId].push({ userId, message });
+
+        // Emit the message to everyone in the room
+        io.to(productId).emit('getMsg', messages[productId]);
+    });
+
+    socket.on('disconnect', () => {
+        console.log('Socket Disconnected', socket.id);
+    });
+});
+
 // Start the server
 httpServer.listen(process.env.PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
