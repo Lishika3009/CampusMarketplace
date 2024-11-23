@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import "./login.css";
@@ -6,7 +6,7 @@ import "./login.css";
 function Login() {
   const navigate = useNavigate();
 
-  const [username, setUserName] = useState('atharv');
+  const [username, setUserName] = useState('');
   const [password, setPassword] = useState('');
 
   const handleApi = () => {
@@ -21,8 +21,7 @@ function Login() {
           if (res.data.token) {
             localStorage.setItem('token', res.data.token);
             localStorage.setItem('userId', res.data.userId);
-            localStorage.setItem('userName', res.data.username);
-            navigate('/');  // Navigate after setting the localStorage
+            navigate('/home');  // Navigate after setting the localStorage
           }
           alert(res.data.message);
         }
@@ -36,17 +35,32 @@ function Login() {
   return (
     <div className="content">
       <div className="flex-div">
-        <div className="name-content">
-          <h1 className="logo">CampusMarketplace</h1>
-          <p>Connect, transact, and explore a world of possibilities – where buying and selling meet seamless connections.</p>
+        <div className="left-div">
+          <div className="text-form">
+          <h1 className="form-text1">Welcome Back!</h1>
+          <p className="form-text2">Enter your credentials to access your account</p>
+          <form>
+            <label>Email Address</label>
+            <input type="text" placeholder="Email" required value={username} onChange={(e) => setUserName(e.target.value)} />
+
+            <label>Password</label>
+            <input type="password" placeholder="Password" required value={password} onChange={(e) => setPassword(e.target.value)} />
+            <button className="login" type="button" onClick={handleApi}>Log In</button>
+            <div class="centered-hr">
+              
+              <hr/>
+            </div>
+
+            <button className="create-account" type="button" onClick={() => navigate('/signup')}>Create New Account</button>
+          </form>
+          </div>
+          
         </div>
-        <form>
-          <input type="text" placeholder="Username" required value={username} onChange={(e) => setUserName(e.target.value)} />
-          <input type="password" placeholder="Password" required value={password} onChange={(e) => setPassword(e.target.value)} />
-          <button className="login" type="button" onClick={handleApi}>Log In</button>
-          <hr />
-          <button className="create-account" type="button" onClick={() => navigate('/signup')}>Create New Account</button>
-        </form>
+        
+        <div className="right-div">
+          
+          
+        </div>
       </div>
     </div>
   );
