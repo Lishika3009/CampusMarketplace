@@ -4,6 +4,7 @@ import { FaPlus } from "react-icons/fa6";
 import { FaBuildingWheat } from "react-icons/fa6";
 import { useState } from 'react';
 import { Link } from "react-router-dom";
+import logo from '../logo.png'
 
 
 function Header(props) {
@@ -59,7 +60,7 @@ const linkStyle = {
         <div class="container-fluid">
         {/*<a class="navbar-brand" style={{color:'#642b60'}} onClick={()=>navigate('/')} href="#"><span style={{fontSize:'3rem'}}>&nbsp;&nbsp;<FaBuildingWheat /></span>CampusMarket</a>*/}
         <a className="navbar-brand" style={{ color: '#6a1e7d' }} onClick={() => navigate('/')} href="#">
-        <img style={{height:'10px', width:'10px', marginRight: '10px' }} src="../../public/logo.png" alt="CampusMarket"  />
+        <img style={{height:'100px', marginRight: '10px' }} src={logo} alt="CampusMarket"  />
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

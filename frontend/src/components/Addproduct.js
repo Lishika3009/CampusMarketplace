@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Header from "./Header";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
+import "./Addproduct.css"
 
 function AddProduct() {
     const navigate = useNavigate();
@@ -45,8 +46,8 @@ function AddProduct() {
     return (
         <div>
             <Header />
-            <div clas   sName="p-3">
-                <h2> ADD PRODUCT HERE : </h2>
+            <div className="p-3">
+                <h2> Add Product Details Here: </h2>
                 <label> Product Name </label>
                 <input className="form-control" type="text" value={pname}
                     onChange={(e) => { setpname(e.target.value) }} />
@@ -56,7 +57,7 @@ function AddProduct() {
                 <label> Product Price</label>
                 <input className="form-control" type="text" value={price}
                     onChange={(e) => { setprice(e.target.value) }} />
-                <label> Room No. & Block </label>
+                <label> Room No. & Hostel </label>
                 <input className="form-control" type="text" value={userlocation}
                     onChange={(e) => { setlocation(e.target.value) }} />
                 <label> Product Category </label>
