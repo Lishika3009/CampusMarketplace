@@ -2,7 +2,8 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 // import "./Reg.css";
-// import "./signup.css";
+// import "./signup.css";\
+import "./login.css";
 function Signup(){
     const navigate = useNavigate()
 
@@ -19,6 +20,9 @@ function Signup(){
         axios.post(url,data)
         .then((res)=>{
             alert(res.data.message);
+            if (res.data.success) { // Assuming your API sends a success flag
+              navigate("/login"); // Redirect to the login page
+          }
             console.log(res)
         })
         .catch((err)=>{
@@ -31,23 +35,20 @@ function Signup(){
           <div className="flex-div">
             <div className="left-div">
               <div className="text-form">
-                <h1 className="form-text1">Get started now</h1>
+                <h1 className="form-text1">Get Started Now</h1>
                 <form>
                 
                 <label>Username</label>
-                <input className='form-control' placeholder="Username" type = "text" value={username} onChange={(e) => {setUserName(e.target.value);}} />
+                <input className='form-control account-form' placeholder="Username" type = "text" value={username} onChange={(e) => {setUserName(e.target.value);}} />
 
                 <label>Mobile Number</label>
-                <input className='form-control' placeholder="Mobile number" type="text" value={mobile} onChange={(e) =>{setMobile(e.target.value);}}/>
+                <input className='form-control account-form' placeholder="Mobile number" type="text" value={mobile} onChange={(e) =>{setMobile(e.target.value);}}/>
 
                 <label>Email Address</label>
-                <input className='form-control' placeholder="Email address" type="text" value={email} onChange={(e) =>{setEmail(e.target.value);}}/> 
-
-                <label>Location</label>
-                <input className='form-control' placeholder="Location" type="text" value={userlocation} onChange={(e) =>{setLocation(e.target.value);}}/>
+                <input className='form-control account-form' placeholder="Email address" type="text" value={email} onChange={(e) =>{setEmail(e.target.value);}}/> 
 
                 <label>Password</label>
-                <input className='form-control' placeholder="Password" type="text" value={password} onChange={(e) =>{setPassword(e.target.value);}}/> 
+                <input className='form-control account-form' placeholder="Password" type="text" value={password} onChange={(e) =>{setPassword(e.target.value);}}/> 
         
                 <button className="login" type="button" onClick={handleApi}>Create New Account</button>
                 <div class="centered-hr">

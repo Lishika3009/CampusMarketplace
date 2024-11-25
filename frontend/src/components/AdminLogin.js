@@ -6,8 +6,8 @@ import "./login.css";
 function AdminLogin() {
   const navigate = useNavigate();
 
-  const [username, setUserName] = useState('atharv');
-  const [password, setPassword] = useState('12345678');
+  const [username, setUserName] = useState('admin');
+  const [password, setPassword] = useState('adminpassword123');
 
   const handleApi = () => {
     console.log({ username, password });

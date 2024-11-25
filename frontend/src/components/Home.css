@@ -12,7 +12,7 @@ h1{
 }
 .card {
     width: 350px; /* Set a fixed width for each card */
-    max-height: 450px; /* Set a fixed height for each card */
+    max-height: 500px; /* Set a fixed height for each card */
     margin: 20px; /* Set margin between cards */
     border:2px solid #00000040;
     transition: transform 0.3s ease, box-shadow 0.3s ease;

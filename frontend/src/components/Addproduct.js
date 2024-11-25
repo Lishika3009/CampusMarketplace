@@ -49,36 +49,34 @@ function AddProduct() {
             <div className="p-3">
                 <h2> Add Product Details Here: </h2>
                 <label> Product Name </label>
-                <input className="form-control" type="text" value={pname}
+                <input className="form-control product-form" type="text" value={pname}
                     onChange={(e) => { setpname(e.target.value) }} />
                 <label> Product Description </label>
-                <input className="form-control" type="text" value={pdesc}
+                <input className="form-control product-form" type="text" value={pdesc}
                     onChange={(e) => { setpdesc(e.target.value) }} />
                 <label> Product Price</label>
-                <input className="form-control" type="text" value={price}
+                <input className="form-control product-form" type="text" value={price}
                     onChange={(e) => { setprice(e.target.value) }} />
-                <label> Room No. & Hostel </label>
-                <input className="form-control" type="text" value={userlocation}
-                    onChange={(e) => { setlocation(e.target.value) }} />
+                
                 <label> Product Category </label>
-                <select className="form-control" value={category}
+                <select className="form-control product-form" value={category}
                     onChange={(e) => { setcategory(e.target.value) }}>
                     <option> Electronics </option>
-                    <option> Mobiles </option>
+                    <option> Clothing </option>
                     <option> Groceries </option>
                     <option> Food Item </option>
                     <option> Books </option>
                 </select>
-                <label> Product First Image URL </label>
+                <label> Product Image 1 </label>
                 <input
-                    className="form-control"
+                    className="form-control product-form" 
                     type="file"
                     files={pimageUrl}
                     onChange={(e) => setPImageUrl(e.target.files[0])}
                 />
-                <label> Product Second Image URL </label>
+                <label> Product Image 2</label>
                 <input
-                    className="form-control"
+                    className="form-control product-form"
                     type="file"
                     files={pimage2Url}
                     onChange={(e) => setPImage2Url(e.target.files[0])} 

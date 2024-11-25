@@ -98,7 +98,7 @@ const displayProducts = Array.isArray(filteredProducts) && filteredProducts.leng
         <Header search={search} handleSearch={handleSearch} handleClick={handleClick}/>
         
         <div className="Products">
-            <h2 style={{ marginLeft: "4px" }}>PRODUCT LIST</h2>
+            <h2 style={{ padding:'20px' }}>PRODUCT LIST</h2>
             <div style={{ display: "flex", flexWrap: "wrap" }}>
             {products.map((item, index) => (
                 <div key={index._id} onClick={() => handleProduct(item._id)} className="row row-cols-1 row-cols-md-3 g-4">
@@ -115,7 +115,7 @@ const displayProducts = Array.isArray(filteredProducts) && filteredProducts.leng
                         {item.status === 'pending' && (
                         <div>
                             <button type="button" class="btn btn-success" style={{backgroundColor:'green'}} onClick={() => handleApproval(item._id, 'approved')}>Approve</button>&nbsp;&nbsp;&nbsp; 
-                            <button type="button" class="btn btn-danger" onClick={() => handleApproval(item._id, 'rejected')}>Reject</button>
+                            <button type="button" class="btn btn-danger" style={{backgroundColor:'red'}}onClick={() => handleApproval(item._id, 'rejected')}>Reject</button>
                         </div>
                         )}
                         {item.status !== 'pending' && (
