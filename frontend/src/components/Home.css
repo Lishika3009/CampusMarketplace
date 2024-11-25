@@ -35,7 +35,7 @@ h1{
   /* Additional styling for card content */
   .card-body {
     padding: 10px;
-    border-top: 2px solid black;
+    border-top: 2px solid #00000040;
     background-color: #f6f6f6;
     /* text-align: center; */
   }

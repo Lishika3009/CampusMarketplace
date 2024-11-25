@@ -39,7 +39,7 @@ function MyProfile(){
                             </div>
                             <div className="col-md-8">
                             <div className="card-body p-5"  style={{color:'black'}}>
-                                <h6>Information</h6>
+                                <h6>Your Information</h6>
                                 <hr className="mt-0 mb-4" />
                                 <div className="row pt-1">
                                 <div className="col-6 mb-3">
