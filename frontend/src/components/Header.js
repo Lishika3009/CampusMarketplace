@@ -9,7 +9,6 @@ import logo from '../logo.png'
 
 function Header(props) {
   const navigate = useNavigate();
-  // const [username, setUsername] = useState("Atharv");
   const [showOver, setshowOver] = useState(false)
 
   const handlelogout = () =>{
@@ -59,7 +58,7 @@ const linkStyle = {
     <nav class="navbar navbar-expand-lg navbar-light " style={{ backgroundColor: '#f6f6f6',width:'100%' ,color:'#6a1e7d'  }}>
         <div class="container-fluid">
         {/*<a class="navbar-brand" style={{color:'#642b60'}} onClick={()=>navigate('/')} href="#"><span style={{fontSize:'3rem'}}>&nbsp;&nbsp;<FaBuildingWheat /></span>CampusMarket</a>*/}
-        <a className="navbar-brand" style={{ color: '#6a1e7d' }} onClick={() => navigate('/')} href="#">
+        <a className="navbar-brand" style={{ color: '#6a1e7d' }} onClick={() => navigate('/home')} href="#">
         <img style={{height:'100px', marginRight: '10px' }} src={logo} alt="CampusMarket"  />
         </a>
 
@@ -77,7 +76,7 @@ const linkStyle = {
         </select> */}
 
         <div className="navbar-links">
-          <a class="navbar-brand" style={{fontSize:'1.5rem',color:'black'}} onClick={()=>navigate('/')} href="#">&nbsp;&nbsp;Home</a>
+          <a class="navbar-brand" style={{fontSize:'1.5rem',color:'black'}} onClick={()=>navigate('/home')} href="#">&nbsp;&nbsp;Home</a>
         </div>
         <div className="navbar-links">
           <a class="navbar-brand" style={{fontSize:'1.5rem',color:'black'}} onClick={()=>navigate('/likedproducts')} href="#">&nbsp;&nbsp;Favourite</a>

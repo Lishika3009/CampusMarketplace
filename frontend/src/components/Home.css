@@ -1,6 +1,7 @@
 /* home.css */
 .mainpage{
   font-family: Poppins;
+  overflow: auto;
 }
 
 .Products{
@@ -37,6 +38,7 @@ h1{
     padding: 10px;
     border-top: 2px solid #00000040;
     background-color: #f6f6f6;
+    color:black;
     /* text-align: center; */
   }
   

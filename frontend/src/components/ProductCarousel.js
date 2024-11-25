@@ -15,14 +15,14 @@ const ProductCarousel = ({ images }) => {
 
   return (
     <div>
-      <FaArrowLeft onClick={handlePrev} style={{ cursor: 'pointer' }} />
+      <FaArrowLeft onClick={handlePrev} style={{ cursor: 'pointer',marginRight:'20px'}} />
       <img
         width="600px"
-        height="400px"
+        height="450px"
         src={'http://localhost:3001/'+ images[activeIndex]}
         alt=""
       />
-      <FaArrowRight onClick={handleNext} style={{ cursor: 'pointer' }} />
+      <FaArrowRight onClick={handleNext} style={{ cursor: 'pointer', marginLeft:'20px'}} />
     </div>
     
   );

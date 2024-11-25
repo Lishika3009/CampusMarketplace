@@ -13,7 +13,7 @@ body {
   background: #f2f4f7;*/
   border-radius: 54px;
   background: #FFF;
-  overflow: hidden; /* Prevent scrolling */
+  /*overflow: hidden;*/ /* Prevent scrolling */
   height: 100%;
 }
 

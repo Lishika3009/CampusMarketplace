@@ -82,7 +82,7 @@ function MyProducts() {
                   <img src={`${'http://localhost:3001/'+item.pimage}`} className="card-img-top" alt={item.pname}/>
                   <div className="card-body">
                     <h5 className="card-title">{item.pname} | {item.category}</h5>
-                    <p className="card-text" style={{color:'green'}}> {item.pdesc}</p>
+                    <p className="card-text" style={{color:'black'}}> {item.pdesc}</p>
                     <h5 className="card-title"> Rs. {item.price} /-</h5>
                   </div>
               </div>

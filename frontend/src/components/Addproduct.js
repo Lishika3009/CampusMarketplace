@@ -36,7 +36,8 @@ function AddProduct() {
                 .then((res) => {
                     if (res.data.message) {
                         alert(res.data.message); 
-                        navigate('/')
+                        navigate('/home')
+                        alert('Product will be added once approved');
                     }
                 })
                 .catch((err) => {

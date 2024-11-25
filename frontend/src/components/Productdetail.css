@@ -1,0 +1,21 @@
+h3{
+    font-weight:bold;
+}
+
+h4{
+    margin-top: 50px;
+}
+
+.price-div{
+    width:20%;
+}
+
+.contact-btn{
+    width:fit-content;
+    background-color: #fff;
+    color:#6a1e7d;
+}
+
+.contact-btn:hover{
+    color:#fff;
+}

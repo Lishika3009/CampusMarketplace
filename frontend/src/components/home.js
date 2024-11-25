@@ -135,7 +135,7 @@ function Home() {
                         <h5 className="card-title">
                           {item.pname} | {item.category}
                         </h5>
-                        <p className="card-text" style={{ color: "green" }}>
+                        <p className="card-text" style={{ color: "black" }}>
                           {" "}
                           {item.pdesc}
                         </p>

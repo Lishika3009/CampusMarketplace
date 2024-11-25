@@ -1,4 +1,4 @@
 
-let Categories = ['Mobiles', 'Groceries', 'Electronics','Food Item','Books']
+let Categories = ['Electronics', 'Clothing', 'Groceries','Food Item','Books']
 
 export default Categories;

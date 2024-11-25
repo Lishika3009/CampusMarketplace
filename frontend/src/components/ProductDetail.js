@@ -4,6 +4,7 @@ import axios from "axios";
 import Header from "./Header";
 import ProductCarousel from "./ProductCarousel";
 import io from 'socket.io-client';
+import './Productdetail.css'
 
 const socket = io('http://localhost:3001'); // Initialize socket connection
 
@@ -81,20 +82,21 @@ function ProductDetail() {
           <div className="d-flex justify-content-space-around flex-wrap" style={{ margin: "2%" }}>
             <div>
               <ProductCarousel images={[product.pimage, product.pimage2]} />
-              <h6>Product Details:</h6>
+              <h4>Product Description</h4>
               <p>{product.pdesc}</p>
             </div>
-            <div style={{ marginLeft: "10%" }}>
+            <div className="price-div" style={{ marginLeft: "5%" }}>
               <h3 className="m-2 price-text">Rs. {product.price} /-</h3>
-              <p className="m-2">{product.pname} | {product.category}</p>
-              <p className="m-2 text-success">{product.pdesc}</p>
+              <h5 className="m-2">{product.pname} | {product.category}</h5>
+              <br>
+              </br>
+              
               {product.addedBy && (
                 <button
-                  className="btn btn-success"
-                  style={{ color: "white" }}
+                  className="btn btn-success contact-btn"
                   onClick={() => handleContact(product.addedBy)}
                 >
-                  SHOW CONTACT DETAILS
+                  Show Contact Details
                 </button>
               )}
               <br />
@@ -104,12 +106,11 @@ function ProductDetail() {
                   <h5><span>Name: </span>{user.username}</h5>
                   <h5><span>Mobile No: </span>{user.mobile}</h5>
                   <h5><span>Email: </span>{user.email}</h5>
-                  <h5><span>Location: </span>{user.userlocation}</h5>
                 </div>
               )}
             </div>
-            <div style={{ marginTop: "2rem" }}>
-              <h5>CHATS</h5>
+            <div style={{ marginLeft: "5%",marginTop:"2px" }}>
+              <h3>Chats</h3>
               {msgs && msgs.length > 0 ? (
                 msgs.map((item, index) => (
                   <p
@@ -126,7 +127,8 @@ function ProductDetail() {
                   </p>
                 ))
               ) : (
-                <p>No messages yet.</p>
+  
+                <h5>No messages yet.</h5>
               )}
               <input
                 value={msg}

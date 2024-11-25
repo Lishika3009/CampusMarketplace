@@ -23,14 +23,14 @@ function MyProfile(){
     return(
         <div>
             <Header/>
-            <section className="vh-100" style={{ backgroundColor: '#f4f5f7' }}>
-                <div className="container py-5 " style={{ width:'100%' }}>
+            <section className="vh-100" style={{ backgroundColor: '#fff' }}>
+                <div className="container py-5 " style={{ width:'100%', backgroundColor:'#d9d9d9'}}>
                     <div className="row d-flex justify-content-center align-items-center h-100">
                     <div className="col mb-2 mb-lg-0">
                         <div className="card mb-3" style={{ borderRadius: '.5rem',width:'700px' ,marginLeft:'25%',marginRight:'25%'}}>
-                        <div className="row g-0" >
+                        <div className="row g-0" style={{ borderRadius: '0px'}} >
                             <div className="col-md-4 gradient-custom text-center text-white"
-                            style={{ borderTopLeftRadius: '.5rem', borderBottomLeftRadius: '.5rem' }}>
+                            style={{ borderTopLeftRadius: '1rem', borderBottomLeftRadius:'1rem'}}>
                             <img style={{width:'200px', height:'200px',  borderRadius:'50%' }} src="https://winaero.com/blog/wp-content/uploads/2018/08/Windows-10-user-icon-big.png"
                                 alt="Avatar" className="img-fluid my-5"  />
                             <h5>{user.username}</h5>
@@ -41,6 +41,14 @@ function MyProfile(){
                             <div className="card-body p-5"  style={{color:'black'}}>
                                 <h6>Your Information</h6>
                                 <hr className="mt-0 mb-4" />
+
+                                <div className="row pt-1">
+                                <div className="col-6 mb-3">
+                                    <h6>Username</h6>
+                                    <p className="text-muted">{user.username}</p>
+                                </div>
+                                
+                                </div>
                                 <div className="row pt-1">
                                 <div className="col-6 mb-3">
                                     <h6>Email</h6>
@@ -51,15 +59,9 @@ function MyProfile(){
                                     <p className="text-muted">{user.mobile}</p>
                                 </div>
                                 </div>
-                                <h6>Projects</h6>
-                                <hr className="mt-0 mb-4" />
-                                <div className="row pt-1">
-                                <div className="col-6 mb-3">
-                                    <h6>Location</h6>
-                                    <p className="text-muted">{user.userlocation}</p>
-                                </div>
                                 
-                                </div>
+                                <hr className="mt-0 mb-4" />
+                                
                                 
                             </div>
                             </div>
