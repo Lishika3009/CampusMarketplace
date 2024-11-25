@@ -40,7 +40,7 @@ function Login() {
           <h1 className="form-text1">Welcome Back!</h1>
           <p className="form-text2">Enter your credentials to access your account</p>
           <form>
-            <label>Email Address</label>
+            <label>Username</label>
             <input type="text" placeholder="Email" required value={username} onChange={(e) => setUserName(e.target.value)} />
 
             <label>Password</label>

@@ -22,7 +22,11 @@ import AdminLogin from './components/AdminLogin';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: ( <Home/> ),
+    element: ( <Signup/> ),
+  },
+  {
+    path: "/home",
+    element: (<Home/> ),
   },
   {
     path: "about",
