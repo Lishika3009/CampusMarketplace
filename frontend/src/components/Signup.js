@@ -11,7 +11,7 @@ function Signup(){
     const[password,setPassword] = useState('')
     const[mobile,setMobile] = useState('')
     const[email,setEmail] = useState('')
-    const[userlocation,setLocation] = useState('')
+    const[userlocation, setLocation] = useState('')
 
     const handleApi = () => {
         console.log(username,password,mobile,email,userlocation)
@@ -20,8 +20,9 @@ function Signup(){
         axios.post(url,data)
         .then((res)=>{
             alert(res.data.message);
-            if (res.data.success) { // Assuming your API sends a success flag
-              navigate("/login"); // Redirect to the login page
+            if (res.data.message=="Saved successfully.") {
+              console.log("Navigating to login page"); // Assuming your API sends a success flag
+              navigate('/login'); // Redirect to the login page
           }
             console.log(res)
         })
