@@ -1,41 +1,58 @@
 
 
 .header-container {
-    padding: 5px 5px;
-    background-color: #002f3408;
-    border-bottom: 3px solid #fff;
+    background-color: #f6f6f6;
+    border-bottom: 3px solid #D9D9D9;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .1);
+    font-family: Poppins;
+    display: flex;
+    justify-content: space-between;
+    padding:0 20px;
+    
 }
 
 .cat-container {
+    border-bottom: 3px solid #D9D9D9;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .1);
-    padding: 8px 10px;
+    padding: 15px 20px;
 
 }
 
 .mt-3 {
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 20px;
+}
+
+.navbar-links{
+    margin-top: 5px;
 }
 
 .search {
-    margin-left: 80px;
+    margin-left: 2rem;
+    background-color: #d9d9d970;
+    color: #6a1e7d;
     outline: none;
-    padding-left: 10px;
-    width: 400px;
-    height: 44px;
-    border: 2px solid #002f34;
-    border-radius: 4px 0px 0px 4px;
+    padding: 10px;
+    width: 250px;
+    height: 40px;
+    border: 2px solid #d9d9d9;
+    border-radius: 10px 0 0 10px;
+} 
+
+.search:hover{
+    border:2px solid #6a1e7d;
 }
 
 .search-btn {
-    height: 44px;
-    background-color: #002f34;  
+    height: 40px;
+    background-color: #6a1e7d;  
     color: #fff;
-    border-radius: 0px 4px 4px 0px;
+    border-radius: 0 10px 10px 0;
     outline: none;
     border: none;
     padding: 0px 15px;
+    margin-right: 20rem;
+    font-size: 1.2rem;
 }
 
 
@@ -61,7 +78,7 @@
 }
 .navbar-brand{
     font-size: 24px;
-    color: #002f34;
+    color: #6a1e7d;
     font-weight: bold;
 }
 .plus-icon{
@@ -88,13 +105,15 @@
     background-color: #45a049; /* Darker green on hover, you can customize */
   }
   .sell {
-    padding: 8px 20px;
-    border: 3px #0dcaf0 solid;
-    color: #002f34;
+    padding: 8px 8px;
+    color: #fff;
     text-align: center;
-    background: #fff;
-    border-radius: 30px;
-    box-shadow: 0px 3px 5px #a9a9a9;
+    background: #6a1e7d;
+    border-radius: 1px;
+    font-size: 1.2rem;
+  }
+  .sell:hover{
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
   }
 
   .category{

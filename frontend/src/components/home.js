@@ -81,16 +81,15 @@ function Home() {
     : products.filter((item) => item.status === "approved");
 
   return (
-    <div>
+    <div className="mainpage">
       <Header search={search} handleSearch={handleSearch} handleClick={handleClick} />
       <Categories handleCategory={handleCategory}/>
       <div className="Products">
-        <h2 style={{ marginLeft: "4px" }}>PRODUCT LIST</h2>
+        <h1 style={{padding:'20px'}}>Product List</h1>
        
        
         {issearch && filteredProducts && filteredProducts.length === 0 && <h5>NO RESULT FOUND</h5>}
 
-        <h5>SEARCH CATEGORY</h5>
         {!issearch && (
           <div style={{ display: "flex", flexWrap: "wrap" }}>
             {cproducts.map((item, index) => (
@@ -105,7 +104,7 @@ function Home() {
                       <h5 className="card-title">
                         {item.pname} | {item.category}
                       </h5>
-                      <p className="card-text" style={{ color: "green" }}>
+                      <p className="card-text" style={{ color: "black" }}>
                         {" "}
                         {item.pdesc}
                       </p>
@@ -120,7 +119,6 @@ function Home() {
 
         
         
-        <h5>ALL PRODUCTS</h5>
         {issearch && (
           <div style={{ display: "flex", flexWrap: "wrap" }}>
             {filteredProducts &&

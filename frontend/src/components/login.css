@@ -68,7 +68,7 @@ body {
   flex-direction: column;
   background: #fff;
   padding: 8%;
-  width: 50%;
+  width: 40%;
   height: 100%;
   /*width: 800px;
 height: 1460.353px;*/
@@ -136,8 +136,8 @@ form input:focus {
 
 form .login {
   border-radius: 10px;
-  border: 1px solid #642b60;
-  background: #642b60;
+  border: 1px solid #6a1e7d;
+  background: #6a1e7d;
   padding: .8rem 1rem;
   font-size: 1.2rem;
   color: #fff;
@@ -175,16 +175,16 @@ form .create-account {
   
   background: #fff;
   padding: 0.8rem 1rem;
-  border: 1px solid #642b60;
+  border: 1px solid #6a1e7d;
   border-radius: 10px;
   font-size: 1.2rem;
-  color:  #642b60;
+  color:  #6a1e7d;
   width: 50%;
   margin: 0 auto;
 }
 
 form .create-account:hover {
-  background:  #642b60;
+  background:  #6a1e7d;
   color:#fff;
   cursor: pointer;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);

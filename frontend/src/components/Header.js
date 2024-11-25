@@ -55,9 +55,13 @@ const linkStyle = {
   return(
 
     <div className="header-container d-flex justify-content-between">
-    <nav class="navbar navbar-expand-lg navbar-light " style={{ backgroundColor: '#f0f0f0',width:'100%' ,color:'#002f34'  }}>
+    <nav class="navbar navbar-expand-lg navbar-light " style={{ backgroundColor: '#f6f6f6',width:'100%' ,color:'#6a1e7d'  }}>
         <div class="container-fluid">
-        <a class="navbar-brand" style={{color:'#002f34'}} onClick={()=>navigate('/')} href="#"><span style={{fontSize:'30px'}}>&nbsp;&nbsp;<FaBuildingWheat /></span>Campus Marketplace</a>
+        {/*<a class="navbar-brand" style={{color:'#642b60'}} onClick={()=>navigate('/')} href="#"><span style={{fontSize:'3rem'}}>&nbsp;&nbsp;<FaBuildingWheat /></span>CampusMarket</a>*/}
+        <a className="navbar-brand" style={{ color: '#6a1e7d' }} onClick={() => navigate('/')} href="#">
+        <img style={{height:'10px', width:'10px', marginRight: '10px' }} src="../../public/logo.png" alt="CampusMarket"  />
+        </a>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -71,14 +75,22 @@ const linkStyle = {
           ))}
         </select> */}
 
-        <a class="navbar-brand" style={{color:'#002f34', fontSize:'20px', fontWeight:'16px'}} onClick={()=>navigate('/')} href="#">&nbsp;&nbsp;Home</a>
-        <a class="navbar-brand" style={{color:'#002f34', fontSize:'20px', fontWeight:'16px'}} onClick={()=>navigate('/likedproducts')} href="#">&nbsp;&nbsp;Favourite</a>
-        <a class="navbar-brand" style={{color:'#002f34', fontSize:'20px', fontWeight:'16px'}} onClick={()=>navigate('/myproducts')} href="#">&nbsp;&nbsp;My Products</a>
+        <div className="navbar-links">
+          <a class="navbar-brand" style={{fontSize:'1.5rem',color:'black'}} onClick={()=>navigate('/')} href="#">&nbsp;&nbsp;Home</a>
+        </div>
+        <div className="navbar-links">
+          <a class="navbar-brand" style={{fontSize:'1.5rem',color:'black'}} onClick={()=>navigate('/likedproducts')} href="#">&nbsp;&nbsp;Favourite</a>
+        </div>
+        <div className="navbar-links">
+          <a class="navbar-brand" style={{fontSize:'1.5rem',color:'black'}} onClick={()=>navigate('/myproducts')} href="#">&nbsp;&nbsp;My Products</a>
+        </div>
+        
+        
         
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
         <div class="d-flex" onSubmit={(e) => e.preventDefault()}>
-        <input class="" className="search" type="search" placeholder="Search" aria-label="Search" value={props && props.search} onChange={(e)=>props.handleSearch && props.handleSearch(e.target.value)}  />
+        <input class="" className="search" type="search" placeholder="Look for something..." aria-label="Search" value={props && props.search} onChange={(e)=>props.handleSearch && props.handleSearch(e.target.value)}  />
         <button class="btn btn-outline-success" className="search-btn" onClick={()=> props.handleClick && props.handleClick()}>Search</button>
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">

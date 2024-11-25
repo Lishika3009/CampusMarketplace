@@ -70,7 +70,7 @@ function MyProducts() {
     <div>
       <Header search={search} handleSearch={handleSearch} handleClick={handleClick}/>
       <div className="Products">
-        <h1 style={{ marginLeft: "15px" }}>PRODUCT LIST</h1><br/>
+        <h1 style={{padding:'20px'}}>Product List</h1>
         <div style={{ display: "flex", flexWrap: "wrap" }}>
           {displayProducts.map((item, index) => (
             <div key={index._id} onClick={()=>handleProduct(item._id)}className="row row-cols-1 row-cols-md-3 g-4">
